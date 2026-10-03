@@ -1,0 +1,28 @@
+{
+  "name": "cozy-reading-room",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A cozy little room for the articles you love. Save them from Chrome, read them on a coffee table.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "seed": "tsx src/seed.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsdom": "^26.1.0",
+    "nanoid": "^5.1.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

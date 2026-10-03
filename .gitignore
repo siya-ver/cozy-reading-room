@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.DS_Store
+
+# your personal library lives here; the seed file is committed, your real saves are not
+data/articles.json
