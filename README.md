@@ -17,7 +17,7 @@ Your library is a single file at `data/articles.json`. Back it up, move it, open
 ## Install the Chrome extension
 
 1. Open `chrome://extensions` and turn on **Developer mode** (top right).
-2. Click **Load unpacked** and choose the `extension/` folder in this repo.
+2. Click **Load unpacked** and choose the `cozy-room-chrome-extension/` folder in this repo.
 3. On any article, click the little paper icon (or press `Cmd+Shift+S`). Highlight a sentence first and it's saved as your pull quote. Right-click also works.
 
 The extension grabs the page from inside your browser, so anything you're logged into (NYT, FT, WSJ, the Post, the Economist) saves with full text. It talks to `http://localhost:4321` by default; change that in the popup's Settings if you run the server elsewhere.
@@ -77,7 +77,7 @@ public/
   index.html           the nook
   room.css             the look
   room.js              pile, rack, desk, reader, newspaper
-extension/             Chrome extension (Manifest V3)
+cozy-room-chrome-extension/   Chrome extension (Manifest V3)
 data/samples.json      sample essays for `npm run seed`
 data/articles.json     your library (gitignored)
 IDEAS.md               the running wishlist
