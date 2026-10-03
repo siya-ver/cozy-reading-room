@@ -1,0 +1,48 @@
+[
+  {
+    "url": "https://example.com/samples/the-slow-reader",
+    "title": "In Defense of the Slow Reader",
+    "source": "The Marginalia Review",
+    "author": "Imogen Hale",
+    "publishedAt": "2026-09-14",
+    "tags": ["reading", "attention"],
+    "highlight": "a page read twice is a different page",
+    "content": "<p>There is a particular kind of embarrassment that belongs to people who read slowly. It arrives at book clubs, in seminar rooms, on trains where a stranger turns pages at a clip that suggests the words are simply being counted. The slow reader looks up, sees how far behind they are, and feels something like shame.</p><p>This essay is an argument that the shame is misplaced. Speed, in reading, is almost never the thing we actually want. What we want is to come out the other side of a text changed in some small way, and change has a stubborn relationship with time.</p><h2>The myth of throughput</h2><p>Consider the way we talk about books finished per year, as if a library were a warehouse and the reader a forklift. The metaphor is revealing. It treats a text as cargo, something to be moved from one state (unread) to another (read), with the quality of the journey irrelevant.</p><p>But a page read twice is a different page. The second reading notices the sentence that was doing quiet work the first time through. It catches the hinge paragraph where the author changes their mind. It hears the joke. None of this shows up in a count of books finished.</p><h2>What slowness buys</h2><p>Slowness buys the chance to disagree. Fast reading tends to accept an author's framing because there is no time to construct an alternative. The slow reader, pausing at a claim, has a moment to ask whether it is true, and that moment is where thinking happens.</p><p>It also buys memory. The research on this is unambiguous: the things we retain are the things we lingered on, returned to, wrote in the margins about. Speed optimizes for the feeling of having read. Slowness optimizes for having read.</p><p>So the next time you find yourself three pages behind the person across the aisle, consider the possibility that you are not behind at all. You are simply somewhere else, and the somewhere else is the point.</p>"
+  },
+  {
+    "url": "https://example.com/samples/rooms-we-return-to",
+    "title": "The Rooms We Return To",
+    "source": "Hearth Quarterly",
+    "author": "Tomas Ferreira",
+    "publishedAt": "2026-08-30",
+    "tags": ["design", "home"],
+    "content": "<p>Ask someone to describe their favorite room and they will almost never describe it by its dimensions. They will tell you about the light at four in the afternoon, the chair that has learned the shape of them, the smell of a particular book or a particular soup. The room is not the walls. The room is what the walls have come to hold.</p><p>Architects know this and mostly cannot do anything about it, because the part of a room that makes it beloved is the part that accrues after the architect leaves. It is the residue of use.</p><h2>Clutter, considered</h2><p>There is a fashionable idea that a good room is an empty one. Surfaces clear, objects hidden, nothing to catch the eye. It photographs well. It is also, for most people, unlivable, because a surface with nothing on it is a surface with no history.</p><p>The alternative is not mess. It is curation by return. The things that stay on the table are the things you keep picking up. The things that migrate to the shelf are the things you have finished with but are not ready to lose. A room arranged this way is a map of attention, and reading it tells you what the person who lives there actually cares about.</p><h2>The table and the shelf</h2><p>If you want to design a room people return to, give it a table and a shelf, and let the traffic between them be visible. The table is the present tense. The shelf is memory. A room with only a shelf is a museum. A room with only a table is a waiting room. The good ones have both, and a short walk between.</p>"
+  },
+  {
+    "url": "https://example.com/samples/small-tools",
+    "title": "Small Tools, Kept Sharp",
+    "source": "The Workbench",
+    "author": "Priya Natarajan",
+    "publishedAt": "2026-09-22",
+    "tags": ["tools", "craft"],
+    "content": "<p>Every craftsperson I have interviewed owns one tool they would run back into a burning building for, and it is never the expensive one. It is a small thing, usually old, usually modified, that fits a hand and a task so exactly that using anything else feels like wearing someone else's shoes.</p><p>Software people have these too, though they are shyer about admitting it. A script that renames files just so. A keyboard shortcut that took a weekend to set up and has saved a thousand small frustrations since. The tool is small. The relationship is not.</p><h2>Why small tools win</h2><p>A small tool can be understood completely. You know what it does, what it will not do, and what happens at the edges. That understanding is what lets you trust it, and trust is what lets you stop thinking about the tool and think about the work.</p><p>Large tools promise to do everything and ask, in exchange, that you learn their world. Small tools ask nothing. They wait on the bench until you need them, and when you pick them up they are exactly where you left them.</p><h2>Keeping them sharp</h2><p>The one obligation a small tool imposes is maintenance. A chisel dulls. A script breaks when the file format changes. The craftsperson's habit is to notice the dullness early, before it ruins a cut, and to spend ten minutes on the stone rather than an hour on the repair.</p><p>Build small. Keep sharp. Run back into the building for the right things.</p>"
+  },
+  {
+    "url": "https://example.com/samples/weather-of-attention",
+    "title": "The Weather of Attention",
+    "source": "Field Notes on Thinking",
+    "author": "Anders Lund",
+    "publishedAt": "2026-07-09",
+    "tags": ["attention", "work"],
+    "content": "<p>Attention has weather. Some mornings it is clear to the horizon and you can see the whole problem at once. Some afternoons it is fog, and the same problem is a wall three feet in front of you. The mistake most of us make is treating the fog as a personal failure rather than a forecast.</p><h2>Reading the sky</h2><p>The first skill is noticing. Not judging, noticing. Is this a clear hour or a foggy one? Clear hours are for the hard thing, the thing that needs the whole problem in view. Foggy hours are for the small, bounded tasks that do not need horizon.</p><p>The second skill is not fighting it. You cannot will a clear sky. You can only arrange to be at the desk when one arrives, and to have the hard thing ready.</p><h2>Shelter</h2><p>Finally, every reader needs shelter: a place where the weather is held at bay long enough to finish a thought. For some it is a library. For some it is a particular chair, a particular lamp, a door that closes. The room matters less than the ritual of entering it. Cross the threshold and the fog, for a while, stays outside.</p>"
+  },
+  {
+    "url": "https://example.com/samples/letters-to-no-one",
+    "title": "Letters to No One in Particular",
+    "source": "The Marginalia Review",
+    "author": "Imogen Hale",
+    "publishedAt": "2026-06-02",
+    "tags": ["writing"],
+    "content": "<p>For a year I kept a notebook of letters I never sent. Not to anyone specific. To the author of a book I had just finished, to a stranger who said something odd on a bus, to a version of myself from a decade earlier. The letters were short, a paragraph at most, and I wrote one most evenings.</p><p>The practice taught me something I did not expect: that the act of addressing a thought to someone, even an imaginary someone, changes the thought. It becomes clearer. It acquires a point. A private note says <em>interesting</em>. A letter says <em>here is why you should care</em>.</p><h2>What stayed</h2><p>Reading them back, the letters I remember are not the clever ones. They are the ones where I disagreed with something and had to say why. Disagreement, it turns out, is the engine of memory. You do not forget the argument you had to build.</p><p>So: write to the author. Write to no one. Write a single line in the margin saying where they lost you. The margin is where reading becomes thinking.</p>"
+  }
+]

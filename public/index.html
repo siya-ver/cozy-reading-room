@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reading Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Fraunces:ital,opsz,wght@1,9..144,400&family=Nunito:wght@500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="room.css" />
+</head>
+<body data-time="evening">
+
+  <main class="room" id="room" aria-label="Your reading room">
+
+    <!-- wall -->
+    <div class="wall">
+      <div class="window" id="window" title="Click to change the time of day">
+        <div class="pane"></div><div class="pane"></div><div class="pane"></div><div class="pane"></div>
+        <div class="sill"></div>
+      </div>
+
+      <!-- shelf of finished articles -->
+      <section class="shelf" aria-label="Finished articles">
+        <div class="shelf-books" id="shelf"></div>
+        <div class="shelf-plank"></div>
+        <p class="shelf-label" id="shelf-label"></p>
+      </section>
+
+      <div class="lamp" id="lamp" title="Click to toggle the lamp">
+        <div class="shade"></div>
+        <div class="stem"></div>
+        <div class="base"></div>
+        <div class="glow"></div>
+      </div>
+    </div>
+
+    <!-- floor -->
+    <div class="floor">
+      <div class="rug"></div>
+
+      <section class="table" aria-label="Unread articles">
+        <div class="table-top">
+          <div class="pile" id="pile"></div>
+          <div class="mug" title="Coffee"></div>
+        </div>
+        <div class="table-legs"><span></span><span></span></div>
+      </section>
+
+      <div class="plant"><div class="pot"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div></div>
+    </div>
+
+    <!-- room chrome -->
+    <header class="hud">
+      <h1>Reading Room</h1>
+      <p id="hud-status">…</p>
+    </header>
+    <div class="hud-actions">
+      <button class="btn" id="btn-random" type="button">Draw one from the pile</button>
+    </div>
+
+    <div class="empty" id="empty" hidden>
+      <p>The table is clear.</p>
+      <p class="hint">Save something from Chrome, or try<br /><code>npm run seed</code> for a few essays to start with.</p>
+    </div>
+  </main>
+
+  <!-- reading view -->
+  <div class="reader" id="reader" hidden>
+    <div class="reader-backdrop" id="reader-close-bg"></div>
+    <article class="sheet" id="sheet">
+      <div class="ribbon" id="ribbon" aria-hidden="true"></div>
+
+      <header class="sheet-head">
+        <button class="sheet-close" id="reader-close" type="button" aria-label="Put it down">Put it down</button>
+        <p class="sheet-source" id="r-source"></p>
+        <h2 class="sheet-title" id="r-title"></h2>
+        <p class="sheet-byline" id="r-byline"></p>
+        <p class="sheet-highlight" id="r-highlight" hidden></p>
+      </header>
+
+      <div class="sheet-body" id="r-body"></div>
+
+      <footer class="sheet-foot">
+        <label class="note">
+          <span>A line for the margin</span>
+          <textarea id="r-note" rows="2" placeholder="What stayed with you?"></textarea>
+        </label>
+        <div class="sheet-actions">
+          <button class="btn ghost" id="btn-fav" type="button">Keep near</button>
+          <a class="btn ghost" id="r-link" href="#" target="_blank" rel="noopener">Read the original</a>
+          <button class="btn" id="btn-done" type="button">Finished, shelve it</button>
+        </div>
+      </footer>
+    </article>
+  </div>
+
+  <script src="room.js"></script>
+</body>
+</html>
