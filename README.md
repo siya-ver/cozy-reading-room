@@ -18,7 +18,7 @@ Your library is a single file at `data/articles.json`. Back it up, move it, open
 
 1. Open `chrome://extensions` and turn on **Developer mode** (top right).
 2. Click **Load unpacked** and choose the `cozy-room-chrome-extension/` folder in this repo.
-3. On any article, click the little paper icon (or press `Cmd+Shift+S`). Highlight a sentence first and it's saved as your pull quote. Right-click also works.
+3. Open any article. A small paper button appears bottom-right; click it and the whole piece goes to the table, ads and clutter stripped. Highlight a sentence first and it becomes the pull quote. The toolbar icon, right-click menu, and `Cmd+Shift+S` do the same thing.
 
 The extension grabs the page from inside your browser, so anything you're logged into (NYT, FT, WSJ, the Post, the Economist) saves with full text. It talks to `http://localhost:4321` by default; change that in the popup's Settings if you run the server elsewhere.
 

@@ -1,16 +1,8 @@
-// Right-click a selection -> "Save to the reading room with this highlight"
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({
-    id: "save-highlight",
-    title: "Save to the reading room with this highlight",
-    contexts: ["selection", "page"],
-  });
-});
+// Background: talks to the reading room server on behalf of the page button
+// and the right-click menu (content scripts can't reach localhost from https pages).
 
-chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-  if (info.menuItemId !== "save-highlight" || !tab?.id) return;
+async function save(page) {
   const { server = "http://localhost:4321" } = await chrome.storage.sync.get("server");
-  const [{ result: page }] = await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ["content.js"] });
   try {
     const res = await fetch(`${server}/api/articles`, {
       method: "POST",
@@ -18,11 +10,33 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       body: JSON.stringify(page),
     });
     const data = await res.json();
-    chrome.action.setBadgeText({ tabId: tab.id, text: res.ok ? (data.alreadySaved ? "✓" : "+1") : "!" });
-    chrome.action.setBadgeBackgroundColor({ tabId: tab.id, color: res.ok ? "#3f5a4c" : "#a8403d" });
+    if (!res.ok) return { ok: false, error: data.error || `Server said ${res.status}` };
+    return { ok: true, alreadySaved: !!data.alreadySaved, mins: Math.max(1, Math.round((data.wordCount || 0) / 230)) };
   } catch {
-    chrome.action.setBadgeText({ tabId: tab.id, text: "!" });
-    chrome.action.setBadgeBackgroundColor({ tabId: tab.id, color: "#a8403d" });
+    return { ok: false, error: "Can't reach the room. Is `npm run dev` running?" };
   }
+}
+
+// from the floating button
+chrome.runtime.onMessage.addListener((msg, _sender, reply) => {
+  if (msg?.type !== "save") return;
+  save(msg.page).then(reply);
+  return true; // async reply
+});
+
+// right-click menu
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "save-highlight",
+    title: "Save to the reading room with this highlight",
+    contexts: ["selection", "page"],
+  });
+});
+chrome.contextMenus.onClicked.addListener(async (info, tab) => {
+  if (info.menuItemId !== "save-highlight" || !tab?.id) return;
+  const [{ result: page }] = await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ["content.js"] });
+  const r = await save(page);
+  chrome.action.setBadgeText({ tabId: tab.id, text: r.ok ? (r.alreadySaved ? "✓" : "+1") : "!" });
+  chrome.action.setBadgeBackgroundColor({ tabId: tab.id, color: r.ok ? "#3f5a4c" : "#a8403d" });
   setTimeout(() => chrome.action.setBadgeText({ tabId: tab.id, text: "" }), 2500);
 });

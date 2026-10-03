@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Cozy Reading Room",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Put this article on your coffee table.",
   "action": {
     "default_popup": "popup.html",
@@ -12,6 +12,9 @@
   "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
   "host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
   "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    { "matches": ["http://*/*", "https://*/*"], "js": ["float.js"], "run_at": "document_idle" }
+  ],
   "commands": {
     "_execute_action": {
       "suggested_key": { "default": "Ctrl+Shift+S", "mac": "Command+Shift+S" },
