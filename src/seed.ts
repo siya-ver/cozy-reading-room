@@ -25,7 +25,7 @@ for (const s of samples) {
     title: s.title,
     source: s.source ?? "Sample",
     author: s.author ?? null,
-    excerpt: textContent.slice(0, 220),
+    excerpt: textContent.slice(0, 480),
     content: s.content,
     textContent,
     wordCount: countWords(textContent),

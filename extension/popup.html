@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { --paper: #f3ebdc; --ink: #2b2322; --soft: #6b5e5a; --wood: #8a5a3b; --rug: #3f5a4c; --ribbon: #a8403d; }
+    body { width: 300px; margin: 0; padding: 14px; font: 13px/1.4 "Nunito", system-ui, sans-serif; color: var(--ink); background: var(--paper); }
+    h1 { font: 500 17px Georgia, serif; margin: 0 0 2px; }
+    .src { color: var(--soft); font-size: 12px; margin: 0 0 10px; }
+    label { display: block; font-weight: 700; font-size: 12px; color: var(--soft); margin: 10px 0 4px; }
+    textarea { width: 100%; box-sizing: border-box; border: 1px solid rgba(0,0,0,.15); border-radius: 6px; padding: 8px; font: inherit; background: #fff; resize: vertical; }
+    .hl { font-style: italic; color: var(--ribbon); background: rgba(168,64,61,.06); padding: 8px; border-radius: 6px; font-size: 12px; max-height: 70px; overflow: auto; }
+    .row { display: flex; gap: 8px; align-items: center; margin-top: 14px; }
+    button { flex: 1; background: var(--rug); color: #fff; border: 0; border-radius: 999px; padding: 10px; font: 700 13px inherit; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: default; }
+    .status { margin: 10px 0 0; font-size: 12px; color: var(--soft); min-height: 16px; }
+    .status.ok { color: var(--rug); } .status.err { color: var(--ribbon); }
+    details { margin-top: 12px; font-size: 11px; color: var(--soft); }
+    input { width: 100%; box-sizing: border-box; font: inherit; padding: 6px; border: 1px solid rgba(0,0,0,.15); border-radius: 6px; }
+    a { color: var(--soft); }
+  </style>
+</head>
+<body>
+  <h1 id="title">…</h1>
+  <p class="src" id="source"></p>
+
+  <div id="hl-wrap" hidden>
+    <label>Your highlight</label>
+    <div class="hl" id="hl"></div>
+  </div>
+
+  <label for="note">A line for the margin (optional)</label>
+  <textarea id="note" rows="2" placeholder="Why this one?"></textarea>
+
+  <div class="row">
+    <button id="save" type="button">Put it on the table</button>
+  </div>
+  <p class="status" id="status"></p>
+
+  <details>
+    <summary>Settings</summary>
+    <label for="server">Reading room server</label>
+    <input id="server" placeholder="http://localhost:4321" />
+    <p><a id="open" href="#" target="_blank">Open the room</a></p>
+  </details>
+
+  <script src="popup.js"></script>
+</body>
+</html>

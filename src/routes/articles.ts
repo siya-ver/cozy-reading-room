@@ -44,7 +44,7 @@ articles.post("/", async (req, res) => {
         title: body.title ?? body.url,
         source: body.source ?? hostToSource(body.url),
         author: body.author ?? null,
-        excerpt: body.excerpt ?? textContent.slice(0, 240),
+        excerpt: body.excerpt ?? textContent.slice(0, 480),
         content: body.content,
         textContent,
         wordCount: countWords(textContent),

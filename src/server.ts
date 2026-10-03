@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { articles } from "./routes/articles.js";
+import { settings } from "./routes/settings.js";
 import { store } from "./lib/store.js";
 
 const app = express();
@@ -22,6 +23,7 @@ app.get("/api/health", async (_req, res) => {
 });
 
 app.use("/api/articles", articles);
+app.use("/api/settings", settings);
 
 // Later: the room UI gets served from here too.
 app.use(express.static("public"));

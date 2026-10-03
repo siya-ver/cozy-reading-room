@@ -5,3 +5,4 @@ dist/
 
 # your personal library lives here; the seed file is committed, your real saves are not
 data/articles.json
+data/settings.json
