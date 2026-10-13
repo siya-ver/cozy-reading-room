@@ -16,6 +16,7 @@ export interface Article {
   savedAt: string;          // ISO timestamp
   publishedAt: string | null;
   readAt: string | null;    // null until you finish it
+  archivedAt?: string | null; // put away without reading; never goes in an issue
   progress: number;         // 0..1, where your ribbon bookmark sits
   favorite: boolean;        // earns a coffee-mug ring on the table
 }

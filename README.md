@@ -1,6 +1,6 @@
 # Cozy Reading Room
 
-A treehouse for the articles you love. Save them from Chrome with one click, read them on a coffee table, and every ten you finish get bound into an issue of your own newspaper.
+A treehouse for the articles you love. Save them from Chrome with one click, read them on a coffee table (or out on the balcony), and every ten you finish get bound into an issue of your own newspaper, which you lay out yourself.
 
 **Status:** backend, room, newspaper, and Chrome extension all working. See `IDEAS.md` for what's next.
 
@@ -22,14 +22,25 @@ Your library is a single file at `data/articles.json`. Back it up, move it, open
 
 The extension grabs the page from inside your browser, so anything you're logged into (NYT, FT, WSJ, the Post, the Economist) saves with full text. It talks to `http://localhost:4321` by default; change that in the popup's Settings if you run the server elsewhere.
 
-## The nook
+## The treehouse
 
+Three rooms side by side. Use the arrows at the screen edges, the chips top-right, or the arrow keys.
+
+**Reading Nook** (start here)
 - **Coffee table** holds what you haven't finished. Papers go sepia the longer they sit. A red ribbon means you're partway through; a mug ring means you marked it "keep near."
 - **Click a paper** and it lifts into a reading sheet. The ribbon bookmark follows your scroll and remembers your spot. The margin note at the bottom saves itself.
+- **Put it away** drops an article you don't want into the **basket** by the table. Basket things never go in the paper; click the basket to bring one back.
 - **The editor's desk** under the lamp holds the issue in progress. Click the stack to see the draft front page. Click the nameplate to name your reader.
-- **Every 10 finished articles** bind into an issue of your paper and land on the rack. Click the masthead to rename the paper. Your favorite (or the longest read) becomes the lead story; your highlights become pull quotes; your margin notes become letters to the editor.
 - **Window** cycles the time of day (it follows your clock by default). **Lamp** toggles.
-- **Rooms** of the treehouse unlock as you read. Only the nook is open for now.
+
+**Print Shop** (opens after 20 finished articles)
+- The rack of bound issues and the press. Every 10 finished articles the press runs and a new issue lands on the rack.
+
+**Balcony** (opens after 5)
+- Outside, in the forest. Click the hammock to take the top of the pile out there and read it under the string lights.
+
+**Editing an issue**
+- Open any issue and hit **Edit layout**. Drag stories to reorder (first one leads), and pick a typeface, column count, and paper color. Saved per issue. Click the masthead to rename the paper.
 
 ## API
 
@@ -41,8 +52,10 @@ The extension grabs the page from inside your browser, so anything you're logged
 | `POST` | `/api/articles` | save (see below) |
 | `PATCH` | `/api/articles/:id` | `progress` (0..1), `favorite`, `note`, `tags`, `readAt` |
 | `POST` | `/api/articles/:id/read` | mark finished |
+| `POST` | `/api/articles/:id/archive` / `restore` | put it away / bring it back |
 | `DELETE` | `/api/articles/:id` | remove |
 | `GET` / `PATCH` | `/api/settings` | `readerName`, `paperName`, `issueSize` |
+| `GET` / `PATCH` | `/api/issues/:no` | per-issue layout: `order` (article ids), `style` (`face`, `columns`, `paper`) |
 
 ### Saving
 
@@ -72,11 +85,12 @@ src/
   lib/extract.ts       Readability wrapper
   routes/articles.ts   the library API
   routes/settings.ts   reader name, paper name
+  routes/issues.ts     per-issue layout choices
   seed.ts              sample essays
 public/
-  index.html           the nook
+  index.html           the three rooms
   room.css             the look
-  room.js              pile, rack, desk, reader, newspaper
+  room.js              camera, pile, rack, desk, basket, reader, newspaper editor
 cozy-room-chrome-extension/   Chrome extension (Manifest V3)
 data/samples.json      sample essays for `npm run seed`
 data/articles.json     your library (gitignored)

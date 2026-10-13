@@ -81,7 +81,7 @@ articles.post("/", async (req, res) => {
 });
 
 // PATCH /api/articles/:id -> bookmark progress, mark read, favorite, note, tags
-const PATCHABLE = ["progress", "readAt", "favorite", "note", "highlight", "tags", "title"] as const;
+const PATCHABLE = ["progress", "readAt", "archivedAt", "favorite", "note", "highlight", "tags", "title"] as const;
 articles.patch("/:id", async (req, res) => {
   const patch: Partial<Article> = {};
   for (const key of PATCHABLE) {
@@ -93,6 +93,19 @@ articles.patch("/:id", async (req, res) => {
     if (patch.progress >= 0.95 && !("readAt" in patch)) patch.readAt = new Date().toISOString();
   }
   const updated = await store.update(req.params.id, patch);
+  if (!updated) return res.status(404).json({ error: "Not found" });
+  res.json(summary(updated));
+});
+
+// POST /api/articles/:id/archive  -> put it away (unread, out of the pile, never in an issue)
+// POST /api/articles/:id/restore  -> back on the table
+articles.post("/:id/archive", async (req, res) => {
+  const updated = await store.update(req.params.id, { archivedAt: new Date().toISOString() });
+  if (!updated) return res.status(404).json({ error: "Not found" });
+  res.json(summary(updated));
+});
+articles.post("/:id/restore", async (req, res) => {
+  const updated = await store.update(req.params.id, { archivedAt: null });
   if (!updated) return res.status(404).json({ error: "Not found" });
   res.json(summary(updated));
 });

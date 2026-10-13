@@ -8,7 +8,10 @@ A running list for the reading room. Add freely, build slowly.
 - Chrome extension with highlight + note
 - Newspaper editions: every 10 finished articles bind into an issue you edit
 - The reader by the lamp (nameable)
-- Treehouse framing with locked rooms
+- Treehouse with three rooms: Print Shop, Nook, Balcony; camera slides between them
+- Basket for putting articles away
+- Gazette editor: drag to reorder, lead story, typeface / columns / paper color
+- SVG reader with layered idle animation
 
 ## Up next (rough priority)
 - **Collectibles + decorating.** Finishing an article sometimes drops a small object (a mug, a plant cutting, a record, a postcard). Cash them in to decorate the nook. Focus Friends energy, no pressure.
@@ -17,7 +20,6 @@ A running list for the reading room. Add freely, build slowly.
 - **Wrapped.** A recap you can generate any time: articles read, words read, top sources, your most-used margin words, the issue you spent longest on, a "your year in headlines" page. Rendered as a special edition of your paper.
 
 ## Newspaper
-- Let the editor drag stories to reorder the front page
 - Headline rewrite: tap a headline and write your own
 - Print or export an issue as PDF
 - Weekly "Sunday edition" that auto-compiles the week's saves even if under 10

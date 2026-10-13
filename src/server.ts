@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { articles } from "./routes/articles.js";
 import { settings } from "./routes/settings.js";
+import { issues } from "./routes/issues.js";
 import { store } from "./lib/store.js";
 
 const app = express();
@@ -17,13 +18,15 @@ app.get("/api/health", async (_req, res) => {
   res.json({
     ok: true,
     articles: all.length,
-    unread: all.filter((a) => !a.readAt).length,
+    unread: all.filter((a) => !a.readAt && !a.archivedAt).length,
+    archived: all.filter((a) => a.archivedAt).length,
     dataFile: store.dataFile,
   });
 });
 
 app.use("/api/articles", articles);
 app.use("/api/settings", settings);
+app.use("/api/issues", issues);
 
 // Later: the room UI gets served from here too.
 app.use(express.static("public"));
